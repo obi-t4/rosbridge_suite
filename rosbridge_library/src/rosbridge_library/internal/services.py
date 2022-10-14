@@ -123,7 +123,7 @@ def call_service(node_handle, service, clients, args=None):
     args_to_service_request_instance(service, inst, args)
 
     client_key = f"{service}:{service_type}"
-    if service_class in clients:
+    if client_key in clients:
         client = clients[client_key]
     else:
         client = node_handle.create_client(service_class, service)
